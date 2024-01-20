@@ -77,21 +77,19 @@ function setAlarm() {
 	const curTime = new Date().getTime();
 	let timeDiff = actualAlarmTime - curTime;
 
-	let timeoutId;
 	if (timeDiff < 0) {
 		alert("Alarm cannot be earlier than Current Time");
 		return;
-	} else {
-		const timeoutId = setTimeout(
-			(id) => {
-				alert("Alarm ringing now");
-				// console.log(id)
-				deleteAt(id);
-			},
-			timeDiff,
-			id
-		);
 	}
+	const timeoutId = setTimeout(
+		(id) => {
+			alert("Alarm ringing now");
+			// console.log(id)
+			deleteAt(id);
+		},
+		timeDiff,
+		id
+	);
 
 	const alarmsContainer = document.getElementById("active-alarms-container");
 	const newAlarm = document.createElement("div");
@@ -105,6 +103,7 @@ function setAlarm() {
 
 //This function is to delete an alarm from the Alarm array and also clearing the interval so alarm does not go off after deletion
 function deleteAt(id) {
+	console.log(alarms);
 	alarms.forEach((e) => {
 		if (e.id == id) {
 			clearTimeout(e.timeoutId);
