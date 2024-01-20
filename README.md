@@ -19,6 +19,9 @@ This project is a basic alarm clock that allows users to set alarms and receive 
 - CSS: Stylesheets for layout and design
 - JavaScript: Programming language for dynamic and interactive features
 
+## Deployed Link
+https://alarm-clock-2dkp.onrender.com/alarm.html
+
 ## Getting Started
 
 1. Clone the repository:
