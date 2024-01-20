@@ -1,3 +1,4 @@
+//Return the time in Printable form for Clock
 function timePrintableForm(hour, minute, second) {
 	let zone = "AM";
 	if (hour >= 12) {
@@ -10,6 +11,7 @@ function timePrintableForm(hour, minute, second) {
 	return { hour, minute, second, zone };
 }
 
+//This is an interval for running clock
 setInterval(function () {
 	const date = new Date();
 	const { hour, minute, second, zone } = timePrintableForm(
@@ -22,7 +24,7 @@ setInterval(function () {
 	).innerHTML = `${hour}:${minute}:${second} ${zone}`;
 }, 1);
 
-
+//This function validates the chosen time
 function validateTime(hour, minute, second) {
 	if (hour > 12 || minute > 59 || second > 59) {
 		alert("Enter Valid time");
@@ -31,6 +33,7 @@ function validateTime(hour, minute, second) {
 	return true;
 }
 
+//This will return the actual time in milliseconds for setting alarm
 function actualTime(hour, minute, second, zone) {
 	if (hour == 12) {
 		if (zone == "AM") {
@@ -38,11 +41,11 @@ function actualTime(hour, minute, second, zone) {
 		}
 	} else {
 		if (zone == "PM") {
-			hour= Number(hour)
-			hour+= 12;
+			hour = Number(hour);
+			hour += 12;
 		}
 	}
-	console.log(hour, minute, second);
+
 	const newDate = new Date();
 	newDate.setHours(hour);
 	newDate.setMinutes(minute);
@@ -50,8 +53,10 @@ function actualTime(hour, minute, second, zone) {
 	return newDate.getTime();
 }
 
+//Storing all the setted alarms in the array
 let alarms = [];
 
+//This function is invoked to set a new Alarm
 function setAlarm() {
 	const form = document.getElementById("set-alarm");
 	const formData = new FormData(form);
@@ -70,21 +75,22 @@ function setAlarm() {
 	let actualAlarmTime = actualTime(hour, minute, second, zone);
 
 	const curTime = new Date().getTime();
-
-
 	let timeDiff = actualAlarmTime - curTime;
-	console.log(actualAlarmTime, curTime, timeDiff)
 
 	let timeoutId;
 	if (timeDiff < 0) {
 		alert("Alarm cannot be earlier than Current Time");
 		return;
 	} else {
-		const timeoutId = setTimeout((id) => {
-			alert("Alarm ringing now");
-			// console.log(id)
-			deleteAt(id)
-		}, timeDiff, id);
+		const timeoutId = setTimeout(
+			(id) => {
+				alert("Alarm ringing now");
+				// console.log(id)
+				deleteAt(id);
+			},
+			timeDiff,
+			id
+		);
 	}
 
 	const alarmsContainer = document.getElementById("active-alarms-container");
@@ -97,6 +103,7 @@ function setAlarm() {
 	alarms.push({ id, hour, minute, second, timeoutId });
 }
 
+//This function is to delete an alarm from the Alarm array and also clearing the interval so alarm does not go off after deletion
 function deleteAt(id) {
 	alarms.forEach((e) => {
 		if (e.id == id) {
