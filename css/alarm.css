@@ -1,0 +1,90 @@
+body {
+	background-color: rgb(2, 2, 49);
+	margin: 0;
+	font-family: 'Arial', sans-serif; /* Use a common sans-serif font */
+  }
+  
+  #alarm-clock-container {
+	width: 550px;
+	height: 92vh;
+	margin: 30px auto;
+	background-color: rgb(217, 217, 230);
+	border: 2px solid black;
+	border-radius: 40px; /* Reduced border radius for a cleaner look */
+	box-shadow: 0 0 20px 10px rgba(255, 255, 255, 0.2);
+  }
+  
+  #heading-alarm-clock {
+	text-align: center;
+	font-weight: 1000;
+	margin-top: 20px;
+	letter-spacing: 1px;
+	color: rgb(2, 2, 49);
+  }
+  
+  #time {
+	font-size: 40px;
+	font-weight: 750;
+	text-align: center;
+	line-height: 100px;
+	color: rgb(2, 2, 49);
+  }
+  
+  #set-alarm input,
+  #set-alarm select,
+  #set-alarm button,
+  button {
+	text-align: center;
+	width: 35px; 
+	height: 40px; /* Adjusted height for input and button */
+	border: 1px solid #ccc; /* Added a border for input and button */
+	border-radius: 5px;
+	margin: 10px 8px; /* Adjusted margin for better spacing */
+	box-sizing: border-box; /* Box-sizing to include border and padding in width/height */
+	font-size: 12px;
+	padding: 8px; /* Adjusted padding for input and button */
+  }
+  
+  input[type="date"] {
+	width: calc(100% - 16px)!important; 
+  }
+  
+  select {
+	-webkit-appearance: none;
+	width: calc(100% - 16px);
+  }
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+  }
+  
+  button {
+	width: calc(100% - 16px);
+	height: 40px; /* Adjusted height for button */
+	padding: 8px 15px;
+	background-color: #3498db; /* Button background color */
+	color: white; /* Button text color */
+	cursor: pointer;
+	transition: background-color 0.3s ease; /* Smooth transition for background color */
+  }
+  
+  button:hover {
+	background-color: #2980b9; /* Darker background color on hover */
+  }
+  
+  #active-alarms-container > div > div {
+	margin-bottom: 10px;
+  }
+  
+  .alarm-div {
+	background-color: #ecf0f1; /* Lighter background color */
+	border-radius: 10px;
+	padding: 15px;
+	font-size: 1.2rem;
+	text-align: center;
+	margin: 10px 0;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
+  }
+  

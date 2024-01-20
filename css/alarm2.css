@@ -1,0 +1,98 @@
+body {
+    background-color: #f4f4f4; /* Light gray background */
+    font-family: 'Roboto', sans-serif; /* Use a clean sans-serif font */
+    margin: 0;
+}
+
+#alarm-clock-container {
+    width: 500px;
+    height: 80vh;
+    margin: 30px auto;
+    background-color: #ffffff;
+    border: 2px solid #3498db; /* Blue border */
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+#heading-alarm-clock {
+    text-align: center;
+    font-weight: 700;
+    margin-top: 20px;
+    letter-spacing: 1px;
+    color: #3498db; /* Blue text */
+}
+
+#time {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    line-height: 100px;
+    color: #2c3e50; /* Dark gray text */
+}
+
+#set-alarm input,
+select,
+#set-alarm button,
+button {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    border: 2px solid #3498db;
+    margin-right: 5px;
+    font-size: 16px;
+    color: #2c3e50;
+}
+
+select {
+    -webkit-appearance: none;
+    background-color: #ffffff;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+}
+
+#active-alarms-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#alarmTitle h3 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #3498db;
+}
+
+.alarm-div {
+    background-color: #ffffff;
+    border: 2px solid #3498db;
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.alarm-div:hover {
+    background-color: #f0f0f0; /* Light gray on hover */
+}
